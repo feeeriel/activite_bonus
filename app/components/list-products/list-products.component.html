@@ -1,0 +1,22 @@
+<!-- list-products.component.html -->
+<div class="container" style="margin-top:30px">
+    <div class="row">
+      <div class="form-group">
+        <label>Search :</label>
+        <input style="margin-bottom:30px" type="text" class="form-control" name="filter" [(ngModel)]="search">
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="alert alert-danger" *ngIf="listProducts.length == 0">
+        <h2>Aucun produit</h2>
+      </div>
+  
+      <ng-container *ngFor="let p of listProducts">
+        <div class="col-md-4" style="margin-bottom: 20px;">
+          <app-card [product]="p" (addToShortlist)="addToShortlist(p)"></app-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  

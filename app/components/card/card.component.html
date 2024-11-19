@@ -1,0 +1,10 @@
+<!-- card.component.html -->
+<div class="card">
+    <img [src]="product.image" [alt]="product.title" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.title }}</h5>
+      <p class="card-text">{{ product.description }}</p>
+      <button class="btn btn-primary" (click)="addToShortlist.emit(product)">Add to shortlist</button>
+    </div>
+  </div>
+  
